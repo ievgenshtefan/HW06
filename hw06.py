@@ -139,7 +139,7 @@ def get_folder_objects(root_path):
                 pass
 
 
-def main(folder_path):
+def sort_launch(folder_path):
     scan(folder_path)
 
     for file in images:
@@ -157,10 +157,13 @@ def main(folder_path):
 
     get_folder_objects(folder_path)
 
-if __name__ == '__main__':
+def main():
     path = sys.argv[1]
     print(f"Start in {path}")
 
     arg = Path(path)
     file_generator(arg)
-    main(arg.resolve())
+    sort_launch(arg.resolve())
+
+if __name__ == '__main__':
+    main()
